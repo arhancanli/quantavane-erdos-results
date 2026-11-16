@@ -1,0 +1,18 @@
+START 2026-11-16T20:06:52Z
+Zc49 SUMMARY_A n=49 pairs=24 range=[0,16777216) pass=0 20:06:54
+Z7xZ7 SUMMARY_A n=49 pairs=24 range=[0,16777216) pass=0 20:06:57
+Zc51 SUMMARY_A n=51 pairs=25 range=[0,33554432) pass=0 20:07:02
+Zc53 SUMMARY_A n=53 pairs=26 range=[0,67108864) pass=0 20:08:11
+Zc55 SUMMARY_A n=55 pairs=27 range=[0,134217728) pass=0 20:08:34
+Z11sZ5 SUMMARY_A n=55 pairs=27 range=[0,134217728) pass=0 20:08:55
+Zc57 SUMMARY_A n=57 pairs=28 range=[0,268435456) pass=0 20:09:40
+Z19sZ3 SUMMARY_A n=57 pairs=28 range=[0,268435456) pass=0 20:10:25
+Zc59 SUMMARY_A n=59 pairs=29 range=[0,536870912) pass=0 20:11:52
+Zc61 SUMMARY_A n=61 pairs=30 range=[0,1073741824) pass=0 20:14:50
+Zc63 SUMMARY_A n=63 pairs=31 range=[0,2147483648) pass=0 20:21:02
+Z3xZ21 SUMMARY_A n=63 pairs=31 range=[0,2147483648) pass=0 20:26:59
+Z7sZ9 SUMMARY_A n=63 pairs=31 range=[0,2147483648) pass=0 20:33:40
+Z3xZ7sZ3 SUMMARY_A n=63 pairs=31 range=[0,2147483648) pass=0 20:40:04
+Zc47 SUMMARY_A n=47 pairs=23 range=[0,8388608) pass=0 20:44:02 (by hand, 64-bit-stamp build)
+Zc65 SUMMARY_A n=65 pairs=32 range=[0,4294967296) pass=0 20:55:55
+END 2026-11-16T20:55:55Z

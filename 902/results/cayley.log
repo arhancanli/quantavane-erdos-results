@@ -1,0 +1,26 @@
+START 2026-11-16T18:53:04Z
+Zc49 SUMMARY n=49 k=4 pairs=24 tested=16777216 pass=0 19:03:07
+Z7xZ7 SUMMARY n=49 k=4 pairs=24 tested=16777216 pass=0 19:03:09
+Zc51 SUMMARY n=51 k=4 pairs=25 tested=33554432 pass=0 19:03:11
+Zc53 SUMMARY n=53 k=4 pairs=26 tested=67108864 pass=0 19:03:16
+Zc55 SUMMARY n=55 k=4 pairs=27 tested=134217728 pass=0 19:03:26
+Z11sZ5 SUMMARY n=55 k=4 pairs=27 tested=134217728 pass=0 19:03:39
+Zc57 SUMMARY n=57 k=4 pairs=28 tested=268435456 pass=0 19:04:08
+Z19sZ3 SUMMARY n=57 k=4 pairs=28 tested=268435456 pass=0 19:04:33
+Zc59 SUMMARY n=59 k=4 pairs=29 tested=536870912 pass=0 19:09:04
+Zc61 SUMMARY n=61 k=4 pairs=30 tested=1073741824 pass=0 19:10:06
+STOPPED 2026-11-16T19:17:29Z: cayley_sk uses 64-bit masks; n=65 needs 128-bit. Remaining groups rerun with cayley_sk128.
+START2 2026-11-16T19:17:45Z
+Zc63 SUMMARY n=63 k=4 pairs=31 tested=2147483648 pass=0 19:22:20
+Z3xZ21 SUMMARY n=63 k=4 pairs=31 tested=2147483648 pass=0 19:31:34
+Z7sZ9 SUMMARY n=63 k=4 pairs=31 tested=2147483648 pass=0 19:34:50
+Z3xZ7sZ3 SUMMARY n=63 k=4 pairs=31 tested=2147483648 pass=0 19:38:57
+Zc65 SUMMARY n=65 k=4 pairs=32 tested=4294967296 pass=0 19:45:32
+Zc67 SUMMARY n=67 k=4 pairs=33 tested=8589934592 pass=2 20:00:24
+k3 B Zc49 SUMMARY n=49 k=3 pairs=24 tested=16777216 pass=8699474
+k3 A DONE n=49 k=3 range=[0,16777216) tested=16777216 hits=8699474
+k3 B Zc51 SUMMARY n=51 k=3 pairs=25 tested=33554432 pass=18001792
+k3 A DONE n=51 k=3 range=[0,33554432) tested=33554432 hits=18001792
+END 2026-11-16T20:06:36Z
+Zc47 SUMMARY n=47 k=4 pairs=23 tested=8388608 pass=0 20:44:01 (order 47 added after the referee read; run by hand)
+A n=67 DONE n=67 k=4 range=[0,8589934592) tested=8589934592 hits=2 21:18:58

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use these colourings, tables or programs, please cite them as below, together with the earlier work credited in README.md."
+type: dataset
+title: "Three computational results on Erdős Problems #160, #311 and #902"
+abstract: "Erdős #160: a 7-colouring of {1,...,77} in which every 4-term arithmetic progression receives at least three colours, so h(77) = 7 and h(N) is known for every N <= 77. Erdős #311: exact values of delta(N), the least nonzero |1 - sum 1/n| over subsets of {1,...,N}, for every N <= 60. Erdős #902: no Cayley tournament on fewer than 67 vertices has Schütte's property S_4."
+authors:
+  - family-names: Canli
+    given-names: Arhan
+    affiliation: Quantavane
+    email: arhan@quantavane.com
+license: CC-BY-4.0
+url: "https://quantavane.com"
+repository-code: "https://github.com/arhancanli/quantavane-erdos-results"
+keywords:
+  - Erdős problems
+  - arithmetic progressions
+  - unit fractions
+  - tournaments
+  - Cayley digraphs
+  - Lean 4

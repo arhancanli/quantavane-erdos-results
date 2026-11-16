@@ -1,0 +1,12 @@
+START 2026-11-16T18:22:11Z
+DONE n=49 k=4 range=[0,16777216) tested=16777216 hits=0
+DONE n=51 k=4 range=[0,33554432) tested=33554432 hits=0
+DONE n=53 k=4 range=[0,67108864) tested=67108864 hits=0
+DONE n=55 k=4 range=[0,134217728) tested=134217728 hits=0
+DONE n=57 k=4 range=[0,268435456) tested=268435456 hits=0
+DONE n=59 k=4 range=[0,536870912) tested=536870912 hits=0
+DONE n=61 k=4 range=[0,1073741824) tested=1073741824 hits=0
+DONE n=63 k=4 range=[0,2147483648) tested=2147483648 hits=0
+DONE n=65 k=4 range=[0,4294967296) tested=4294967296 hits=0
+END 2026-11-16T18:45:50Z
+DONE n=47 k=4 range=[0,8388608) tested=8388608 hits=0 (by hand 20:44:03)
