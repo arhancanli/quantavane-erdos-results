@@ -1,6 +1,6 @@
 #!/bin/sh
 # Re-checks this repository.   sh checks/run_checks.sh [--quick | --full]
-#   --quick (default): Python 3 standard library only, under a minute.
+#   --quick (default): Python 3 standard library only, about a minute.
 #     #160: both checkers accept the 77-colouring (and the published 76-colouring) and both reject every red control.
 #     #311: the exact verifier accepts the two programs' outputs and rejects every red control; plain brute force
 #           agrees for N <= 16.
@@ -10,6 +10,7 @@
 #   --full: also compiles the C programs (cc) and reruns: #311 programs A and B for N <= 40 against the stored values;
 #           #902 the three programs on Z_47, Z_7 x Z_7 and Z_11 x| Z_5, and the S_3 counts for n = 25..33 (all
 #           programs must agree); #160 the Lean file if `lean` (v4.35.0) is on the PATH. A few minutes.
+#   #461, #535, #624, #982, #1159, #1210: each folder's own checks/run.sh, in the same mode (see the folders' READMEs).
 # The last line is "ALL PASS" only if every check passed.
 cd "$(dirname "$0")/.." || exit 1
 mode=${1:---quick}
@@ -82,4 +83,10 @@ if [ "$mode" = --full ]; then
   else echo "skip Lean (no lean on PATH)"; fi
   rm -rf "$tmp"
 fi
+for p in 461 535 624 982 1159 1210; do
+  sh "$p/checks/run.sh" "$mode" > /tmp/qv_erdos_$p.$$ 2>&1
+  r=$?; grep -v '^ok ' /tmp/qv_erdos_$p.$$ | grep -v '^== '; grep -c '^ok ' /tmp/qv_erdos_$p.$$ | sed "s/^/ok   #$p: /; s/\$/ checks passed/"
+  [ $r = 0 ] || fail=1
+  rm -f /tmp/qv_erdos_$p.$$
+done
 if [ $fail = 0 ]; then echo "ALL PASS"; else echo "SOME CHECK FAILED"; exit 1; fi

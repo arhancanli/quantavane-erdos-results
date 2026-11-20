@@ -1,0 +1,11 @@
+# RED CONTROL: rows N = 1..10 of results/table.txt with row 10 replaced by a 6-element set containing the forbidden triple 1, 2, 3.
+1 1 1
+2 2 1,2
+3 2 2,3
+4 3 2,3,4
+5 3 1,2,4
+6 3 1,4,6
+7 3 1,4,6
+8 4 1,4,6,8
+9 5 2,3,4,8,9
+10 6 1,2,3,5,7,9

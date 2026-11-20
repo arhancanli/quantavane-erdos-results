@@ -1,7 +1,7 @@
 Copyright (c) 2026 Arhan Canli (Quantavane)
 
-The colourings, tables, group tables, logs and controls in this repository, README.md and the other text are licensed
-under the Creative Commons Attribution 4.0 International License (CC BY 4.0):
+The colourings, tables, group tables, witnesses, certificates, logs and controls in this repository, the README files
+and the other text are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0):
 https://creativecommons.org/licenses/by/4.0/
 
 You may share and adapt this material for any purpose, including commercially, provided you give appropriate credit
@@ -11,5 +11,10 @@ You may share and adapt this material for any purpose, including commercially, p
 github.com/scottschluer/erdos160 (Zenodo 10.5281/zenodo.23473523); credit for it belongs to its author. It is kept
 here because the search for the 77-colouring started from it.
 
-The programs in */src/ and */checks/ and checks/, and the Lean file in 160/lean/, are licensed under the MIT License
-(LICENSE-CODE).
+1159/planes/hall9.txt, dhall9.txt and hughes9.txt are the Hall, dual Hall and Hughes planes of order 9 as listed by
+G. Eric Moorhouse (ericmoorhouse.org, projective planes of small order); credit for them belongs to him. They are kept
+here, unchanged, so that the checks can run without a download (1159/controls/red_hughes9_points_swapped.txt is a
+deliberately damaged copy of hughes9.txt, used as a red control).
+
+The programs in */src/, */checks/, */controls/ and checks/, and the Lean file in 160/lean/, are licensed under the
+MIT License (LICENSE-CODE).

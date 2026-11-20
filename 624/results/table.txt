@@ -1,0 +1,20 @@
+# Erdős #624: H(n) for n = 2..11, for the statement with f arbitrary (formal-conjectures ErdosProblems/624.lean).
+# H(n) = least m such that some f from the subsets of an n-set X to X has {f(A) : A subset of Y} = X for every Y with |Y| >= m.
+# Upper bound: the explicit f in witnesses/f_n<n>_h<H>.json (sets of size > H are free and not listed).
+# Lower bound H(n) > H(n) - 1, by:
+#   counting  - 2^(H-1) < n, so the 2^(H-1) subsets of an (H-1)-set cannot take n values;
+#   cert      - the CNF of src/enc624.py for (n, H-1) is unsatisfiable: certificates/e624_n<n>_h<H-1>.cnf with its LRAT proof
+#               (the encoding fixes f(empty set) = 0 and value precedence, which is allowed because renaming the values of
+#               a working f gives a working f); for n = 4 also by the plain search checks/search624.py, with no symmetry breaking;
+#   monotone  - H(n-1) <= H(n) (from f for [n] build f' for [n-1] by sending the value n-1 to 0).
+# n  H(n)  H(n) - log2(n)  lower bound  witness
+2 1 0.000 counting witnesses/f_n2_h1.json
+3 2 0.415 counting witnesses/f_n3_h2.json
+4 3 1.000 cert witnesses/f_n4_h3.json
+5 3 0.678 counting witnesses/f_n5_h3.json
+6 3 0.415 counting witnesses/f_n6_h3.json
+7 4 1.193 cert witnesses/f_n7_h4.json
+8 4 1.000 monotone witnesses/f_n8_h4.json
+9 4 0.830 counting witnesses/f_n9_h4.json
+10 4 0.678 counting witnesses/f_n10_h4.json
+11 4 0.541 counting witnesses/f_n11_h4.json

@@ -1,0 +1,2 @@
+# RED CONTROL: the t = 44 witness of results/witnesses.txt with one residue changed (43:3 -> 43:4); f is no longer 22.
+44 22 2:6 3:3 5:0 7:3 11:3 13:12 17:12 19:10 23:6 29:0 31:14 37:10 41:6 43:4

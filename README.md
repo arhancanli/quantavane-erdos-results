@@ -1,11 +1,14 @@
-# Three computational results on Erdős Problems #160, #311 and #902
+# Computational results on Erdős Problems #160, #311, #461, #535, #624, #902, #982, #1159 and #1210
 
-Arhan Canli (Quantavane), November 2026. Each result extends work by others, credited first below. None of them
-settles its problem; each adds checkable facts. Everything here can be rechecked with `sh checks/run_checks.sh`
-(Python 3 standard library, under a minute) or `sh checks/run_checks.sh --full` (also a C compiler; a few minutes).
+Arhan Canli (Quantavane), November 2026. Each result extends work by others, credited first in its section. None of
+them settles its problem; each adds checkable facts: computed values or a finite case. Everything here can be
+rechecked with `sh checks/run_checks.sh` (Python 3 standard library, about a minute) or
+`sh checks/run_checks.sh --full` (also a C compiler; several minutes). Each problem added on 20 November 2026 has its
+own folder with a README and its own one-command check, `sh <problem>/checks/run.sh`.
 
 Credits first: each section opens with the earlier work it builds on. Problem statements are those of T. F. Bloom's
-[erdosproblems.com](https://www.erdosproblems.com).
+[erdosproblems.com](https://www.erdosproblems.com) and of
+[google-deepmind/formal-conjectures](https://github.com/google-deepmind/formal-conjectures).
 
 ---
 
@@ -101,10 +104,66 @@ Z_65 only, and that candidate was rechecked with the build in `src/`.
 
 ---
 
+## 4. Erdős Problem #461: the minimum of f(n,t) over n, exactly, for t ≤ 54 and even t ≤ 64 ([461/](461/))
+
+f(n,t) is the number of distinct t-smooth parts of n+1, …, n+t. Building on the reduction recorded on the
+plasma-ai/erdos page for the problem (f depends only on n mod ∏_{p<t} p^{e_p}; minima there for t = 2, 3), the exact
+minimum m(t) over all n: m(t) = ⌊t/2⌋ + 1 for 4 ≤ t ≤ 43, t = 45, 53; ⌊t/2⌋ for t = 44, 46–52, 54, 56; t/2 − 1 for
+t = 58, …, 64; and explicit n with f(n,2560) = 1004 = 0.392 t. Two exhaustive programs, a referee's third, and an
+explicit n for every value.
+
+---
+
+## 5. Erdős Problem #535: f_3(N) exactly for every N ≤ 64 ([535/](535/))
+
+f_3(N) is the largest subset of {1, …, N} with no three elements of equal pairwise gcds (bounds: Erdős 1964,
+Abbott–Hanson 1970). Values 1, 2, 2, 3, 3, 3, 3, 4, 5, …, rising to 12 at N = 54–64, with an optimal set for each N.
+Two exact programs (integer programming; CP-SAT), a referee's SAT certificates and branch and bound, and a plain
+exhaustive search in this repository.
+
+---
+
+## 6. Erdős Problem #624: H(n) for n = 2, …, 11 ([624/](624/))
+
+For the statement with f arbitrary (formal-conjectures), H(n) = 1, 2, 3, 3, 3, 4, 4, 4, 4, 4 (bounds: Erdős–Hajnal
+1968; Alon). Explicit f for every upper bound; lower bounds by counting, by LRAT-certified unsatisfiability (n = 4, 7)
+and by monotonicity. Small cases may have been discussed in the problem's forum thread; see the folder.
+
+---
+
+## 7. Erdős Problem #982 for every n ≤ 13, in Lean ([982/](982/))
+
+Every convex n-gon with 3 ≤ n ≤ 13 has a vertex with ⌊n/2⌋ distinct distances. These cases were settled before us
+(Paulee314/erdos982, 2 November 2026, Zenodo 10.5281/zenodo.23880465; n = 8 by Fishburn); what is offered is a Lean 4
+proof in formal-conjectures' form, in [arhancanli/quantavane-lean](https://github.com/arhancanli/quantavane-lean)
+(it trusts `native_decide` for the LRAT checks). The folder re-checks those LRAT steps and the n = 12 angle
+certificate without Lean.
+
+---
+
+## 8. Erdős Problem #1159: the least cap of a blocking set in twelve small planes ([1159/](1159/))
+
+The least C such that some point set meets every line in 1 to C points: 3 for PG(2,2), PG(2,3), PG(2,4); 4 for
+PG(2,5), PG(2,7), PG(2,8), PG(2,9), PG(2,11), PG(2,16) and the Hall, dual Hall and Hughes planes of order 9. The lower
+bounds use the counting bound recorded on the plasma-ai/erdos page, which also had cap-4 sets for q = 5, 7, 11;
+Bruen–Fisher's construction already gives cap 4 in PG(2,9). Two checkers; no separate referee yet.
+
+---
+
+## 9. Erdős Problem #1210: M(n) exactly for every 3 ≤ n ≤ 1794 ([1210/](1210/))
+
+M(n) is the largest ∑ 1/(n − a) over pairwise coprime A ⊆ [1, n). Complementing E. Li (arXiv:2606.17955: average
+order and almost-all results, no table), M(n) as an exact fraction with a maximiser for every n ≤ 1794; the excess
+E(n) = M(n) − ∑_{p<n} 1/p equals 1 at n = 3, 4, 6 and stays below 1 for every other n in this range (largest: 0.9695 at n = 204). Branch and
+bound, an integer programme, and a referee's exact dynamic programme over every n.
+
+---
+
 ## Rerun everything
 
-    sh checks/run_checks.sh            # quick: under a minute, Python 3 only
-    sh checks/run_checks.sh --full     # also compiles and reruns the C programs and the Lean file (a few minutes)
+    sh checks/run_checks.sh            # quick: about a minute, Python 3 only
+    sh checks/run_checks.sh --full     # also compiles and reruns the C programs and the Lean file (several minutes)
+    sh 461/checks/run.sh               # one problem only (also 535, 624, 982, 1159, 1210; each takes --full)
 
 Full reruns: #311 `for N in $(seq 1 60); do ./a $N; done` (N = 60 takes about 15 minutes and 1.1 GB for A, a few
 minutes and 1.6 GB for B); #902 `./circ_s4 n 4` for odd n and `./cayley_sk128 902/groups/group_X.txt 4`,
@@ -112,12 +171,15 @@ minutes and 1.6 GB for B); #902 `./circ_s4 n 4` for odd n and `./cayley_sk128 90
 
 ## How AI was used
 
-The programs, the checkers, the Lean file and this README were written with Claude (Anthropic), directed by
-Arhan Canli. The results rest on explicit objects (the colouring, the optimal sets) and on programs and checkers that
-anyone can rerun from this repository; nothing here depends on the AI's judgement.
+The programs, the checkers, the Lean files and the READMEs were written with Claude (Anthropic), directed by
+Arhan Canli. The referees named in the folders are separate Claude sessions that were given only the claim, the
+lemmas and the programs, and wrote their own programs from the definitions. The results rest on explicit objects
+(colourings, optimal sets, functions, point sets, certificates) and on programs and checkers that anyone can rerun
+from this repository; nothing here depends on the AI's judgement.
 
 ## Licence and citation
 
-Text, colourings, tables and logs: CC BY 4.0 (`LICENSE`). Programs and the Lean file: MIT (`LICENSE-CODE`).
-Please cite as: Arhan Canli, Three computational results on Erdős Problems #160, #311 and #902, Quantavane, 2026,
+Text and data (colourings, tables, witnesses, certificates, logs): CC BY 4.0 (`LICENSE`), except the third-party
+files named there. Programs and the Lean file: MIT (`LICENSE-CODE`).
+Please cite as: Arhan Canli, Computational results on Erdős problems, Quantavane, 2026,
 https://github.com/arhancanli/quantavane-erdos-results, together with the work credited above.

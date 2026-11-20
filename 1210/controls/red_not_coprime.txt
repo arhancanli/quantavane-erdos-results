@@ -1,0 +1,2 @@
+# RED CONTROL: the n = 12 row of results/table.txt with 4 added to the set (4 and 10 share the prime 2; the sum changes).
+12 701/330 0.857143 A 1,4,7,9,10,11
