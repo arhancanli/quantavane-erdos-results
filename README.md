@@ -178,9 +178,27 @@ lemmas and the programs, and wrote their own programs from the definitions. The 
 (colourings, optimal sets, functions, point sets, certificates) and on programs and checkers that anyone can rerun
 from this repository; nothing here depends on the AI's judgement.
 
-## Licence and citation
+## Licence
 
-Text and data (colourings, tables, witnesses, certificates, logs): CC BY 4.0 (`LICENSE`), except the third-party
-files named there. Programs and the Lean file: MIT (`LICENSE-CODE`).
+Text and data (colourings, tables, witnesses, certificates, logs): CC BY 4.0 (`LICENSE`), except the third-party files
+named there. Programs and the Lean file: MIT (`LICENSE-CODE`).
+
+## How to cite
+
 Please cite as: Arhan Canli, Computational results on Erdős problems, Quantavane, 2026,
 https://github.com/arhancanli/quantavane-erdos-results, together with the work credited above.
+
+```bibtex
+@misc{quantavane-erdos-results,
+  author       = {Canli, Arhan},
+  title        = {Computational results on {Erd\H{o}s} problems},
+  year         = {2026},
+  howpublished = {\url{https://github.com/arhancanli/quantavane-erdos-results}},
+  note         = {Quantavane; CC BY 4.0; code MIT}
+}
+```
+
+[CITATION.cff](CITATION.cff) gives the same reference for GitHub's "Cite this repository" button.
+
+Known uses of this work are listed in [USED_BY.md](USED_BY.md). If you use it, please open an issue or a pull request
+with a link so that yours can be added.
