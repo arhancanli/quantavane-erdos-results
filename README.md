@@ -146,7 +146,8 @@ certificate without Lean.
 The least C such that some point set meets every line in 1 to C points: 3 for PG(2,2), PG(2,3), PG(2,4); 4 for
 PG(2,5), PG(2,7), PG(2,8), PG(2,9), PG(2,11), PG(2,16) and the Hall, dual Hall and Hughes planes of order 9. The lower
 bounds use the counting bound recorded on the plasma-ai/erdos page, which also had cap-4 sets for q = 5, 7, 11;
-Bruen–Fisher's construction already gives cap 4 in PG(2,9). Two checkers; no separate referee yet.
+Bruen–Fisher's construction already gives cap 4 in PG(2,9), and Baer subplanes give cap 3 in PG(2,4) and cap 4 in all
+four planes of order 9. New as far as we could find: PG(2,8) and PG(2,16). Two checkers and a referee's own programs.
 
 ---
 

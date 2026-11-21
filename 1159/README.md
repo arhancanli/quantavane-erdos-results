@@ -22,6 +22,12 @@ For a plane Π, write c(Π) for the least C for which such a set exists in Π.
 - Szőnyi's 1992 survey of blocking sets reports constant caps in Desarguesian planes of fixed characteristic: at most
   4 in PG(2,3^r) (Bruen and Fisher), at most p + 1 in PG(2,p^r) for odd p (Boros), and 5 or 6 in PG(2,2^r) (Illés,
   Szőnyi and Wettl). In particular a cap-4 set in PG(2,9) follows from Bruen and Fisher's result.
+- Baer subplanes: in a plane of order q = m², a subplane of order m meets every line in 1 or m + 1 points (a
+  classical fact; R. H. Bruck, 1955). So a Baer subplane is a cap-3 set in PG(2,4) and a cap-4 set in a plane of
+  order 9 (the plasma-ai/erdos record notes this for PG(2,9)). Each of the four planes of order 9 has one (the Hughes
+  plane contains PG(2,3) by its construction; the referee also found one in each of Moorhouse's files with
+  `checks/referee_baer.py`). With the counting bound, c = 3 for PG(2,4) and c = 4 for all four planes of order 9 follow
+  from these known facts; the sets listed here are other sets with the same caps.
 - The three non-Desarguesian planes of order 9 are read from G. Eric Moorhouse's list of projective planes
   (ericmoorhouse.org, `planes/hall9.txt`, `planes/dhall9.txt`, `planes/hughes9.txt`, used as data with credit to him).
   Lam, Kolesova and Thiel (1991) showed that there are exactly four planes of order 9.
@@ -37,10 +43,31 @@ For a plane Π, write c(Π) for the least C for which such a set exists in Π.
     Hughes plane of order 9         4     20
     PG(2,11), PG(2,16)              4     21, 39
 
-So all four planes of order 9 have least cap 4, and PG(2,8) and PG(2,16) have least cap 4, below the 5 or 6 of the
-general constructions for PG(2,2^r). The sets are in `results/witnesses.json` (points of PG(2,q) as coordinate
-triples over GF(q), with the field's defining polynomial; points of the other planes as numbers in Moorhouse's
-files). PG(2,13) and PG(2,17) are not decided here, and nothing here bears on large orders.
+So all four planes of order 9 have least cap 4 (as their Baer subplanes already show), and PG(2,8) and PG(2,16) have
+least cap 4, below the 5 or 6 of the general constructions for PG(2,2^r). The sets are in `results/witnesses.json`
+(points of PG(2,q) as coordinate triples over GF(q), with the field's defining polynomial; points of the other planes
+as numbers in Moorhouse's files). An element of GF(p^h) is written as the integer ∑ c_i p^i, standing for ∑ c_i t^i,
+and `modulus` lists the coefficients of the defining polynomial constant term first: [1, 0, 1, 1] is 1 + t² + t³ for
+GF(8), [1, 0, 0, 1, 1] is 1 + t³ + t⁴ for GF(16). (Read the other way round, the GF(8) and GF(16) sets fail.)
+PG(2,13) and PG(2,17) are not decided here, and nothing here bears on large orders.
+
+## New and known
+
+- Known before this repository: c = 3 for PG(2,2) (a line meets every other line once) and for PG(2,4) (a Baer
+  subplane); c = 4 for PG(2,5), PG(2,7) and PG(2,11) (plasma-ai/erdos), for PG(2,9) (a Baer subplane; Bruen and
+  Fisher) and, by Baer subplanes and the counting bound, for the Hall, dual Hall and Hughes planes of order 9. The
+  lower bounds are the counting bound of the plasma-ai/erdos record.
+- Elementary, not found stated: c = 3 for PG(2,3) (a 6-point set; there are 468 sets with cap 3 among all 2^13
+  subsets).
+- New as far as we could find: c = 4 for PG(2,8) and for PG(2,16). The constructions read give 5 or 6 for PG(2,2^r)
+  (Illés, Szőnyi and Wettl; three conics on plasma-ai/erdos), and 5 for PG(2,16) (a Baer subplane or a unital).
+- Searched (21 Nov 2026): the plasma-ai/erdos record and lead page for #1159; S. Asgarli, D. Ghioca and C. H. Yip,
+  Blocking sets from a union of plane curves (arXiv:2510.15332v2); A. Blokhuis, Combinatorial problems in finite
+  geometry and lacunary polynomials (ICM 2002, arXiv:math/0304463); OpenAlex, including the works citing
+  Erdős–Silverman–Stein (1983) and Ughi (1988). Not read: H. L. Abbott and A. Liu, Property B(s) and projective planes
+  (Ars Combin. 20, 1985); R. Silverman and A. Stein (Int. J. Comput. Geom. Appl. 2, 1992); E. Ughi (Geom. Dedicata 26,
+  1988); Illés, Szőnyi and Wettl (1991); A. Gács and T. Szőnyi (Des. Codes Cryptogr. 47, 2008). Any of these may hold
+  small cases.
 
 ## Method
 
@@ -61,10 +88,22 @@ or c = 3 (q ≥ 5); this is the same counting bound as in the plasma-ai/erdos re
   ∑ i(i − 1) t_i = s(s − 1) in place of the inequality). Each rebuilds every plane and every line.
 - During the search, each set was also re-checked by the lab's own separate checkers (`check1159.py`,
   `check_singer.py`, not included: they read the lab's file layout).
-- No separate referee has reviewed this result yet (the other results in this repository had one).
+- Referee (21 Nov 2026): a separate AI session, given only the claim and the files, wrote its own field, plane and
+  checking code from the definitions (`checks/referee_rplane.py`, `checks/referee_witnesses.py`: GF(8), GF(9) and
+  GF(16) built from its own polynomials, each set carried over by a field isomorphism; the planes of order 9
+  downloaded again from Moorhouse's site, byte-identical), and its own exhaustive searches (`checks/referee_exh.c`,
+  `checks/referee_brute.c`, `checks/referee_exhaustive.py`): no cap-3 set in PG(2,5) by brute force over all 2^31
+  subsets and by a search without symmetry breaking, none in PG(2,7) with and without symmetry breaking, and least
+  cap 3 for q ≤ 4 by brute force. It also found a Baer subplane in each plane of order 9 (`checks/referee_baer.py`),
+  and an invariant (quadrangles with collinear diagonal points; `checks/referee_fano.c`) shows that the four planes
+  of order 9 used here are pairwise non-isomorphic (the Hall and dual Hall files give the same counts with points
+  and lines swapped, as a plane and its dual must).
+  Verdict: correct, with fixes to the credits (Baer subplanes) and to the description of the field encoding, both made
+  above; no value changed.
 - Red controls (a point removed, a cap claimed one too small, a reducible field polynomial, a plane file with two
   points swapped) are refused by both checkers.
 
 ## Rerun
 
     sh 1159/checks/run.sh           # Python 3 only, about twenty seconds
+    sh 1159/checks/run.sh --full    # also the referee's programs (needs a C compiler; about a minute)
